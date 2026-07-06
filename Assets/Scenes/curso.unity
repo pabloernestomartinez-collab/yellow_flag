@@ -259,7 +259,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  normalMaterial: {fileID: 2100000, guid: f1092a5bf4890a38bbf283a1a7320253, type: 2}
+  normalMaterial: {fileID: 2100000, guid: f05bab5d30ed3b3d0a0b864fc3685873, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 2485ec6d0d362ea3280ff53f16d54be2, type: 2}
 --- !u!1 &203844586
 GameObject:
@@ -690,8 +690,8 @@ MonoBehaviour:
   onClickAction:
     m_PersistentCalls:
       m_Calls: []
-  normalMaterial: {fileID: 0}
-  highlightMaterial: {fileID: 0}
+  normalMaterial: {fileID: 2100000, guid: b9d1a031b647d21aeb8fe249242b4822, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: f1092a5bf4890a38bbf283a1a7320253, type: 2}
 --- !u!1 &514091521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,7 +1463,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  normalMaterial: {fileID: 2100000, guid: f1092a5bf4890a38bbf283a1a7320253, type: 2}
+  normalMaterial: {fileID: 2100000, guid: 171c1c333703ff240935643ce5f895f2, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 79e96db11a01beca198a210c3fd711a1, type: 2}
 --- !u!1 &961739749
 GameObject:
@@ -2063,7 +2063,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  normalMaterial: {fileID: 2100000, guid: f1092a5bf4890a38bbf283a1a7320253, type: 2}
+  normalMaterial: {fileID: 2100000, guid: ecb496052c16195d6a2afa0a3eb5d09a, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 2b35bbad18b502c84bc0b23884431e6c, type: 2}
 --- !u!1 &1376436482
 GameObject:
@@ -2483,8 +2483,8 @@ MonoBehaviour:
   onClickAction:
     m_PersistentCalls:
       m_Calls: []
-  normalMaterial: {fileID: 0}
-  highlightMaterial: {fileID: 0}
+  normalMaterial: {fileID: 2100000, guid: b9d1a031b647d21aeb8fe249242b4822, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: f1092a5bf4890a38bbf283a1a7320253, type: 2}
 --- !u!1 &1673454011
 GameObject:
   m_ObjectHideFlags: 0
