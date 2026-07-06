@@ -1,0 +1,56 @@
+¡Qué gran proyecto! Explicar el uso de máquinas herramientas (como tornos, fresadoras o taladros de banco) es un desafío espectacular porque combina teoría mecánica, destreza manual y, sobre todo, mucha seguridad.
+
+Para que tu tutorial sea realmente efectivo, seguro y fácil de seguir, te sugiero estructurarlo bajo el concepto de "Seguridad primero, precisión después".
+
+Aquí tenés una guía paso a paso de cómo podés organizar el contenido de tu tutorial, ya sea para un video, un manual PDF o un hilo explicativo:
+
+1. Introducción y Anatomía de la Máquina
+Antes de que el usuario toque un botón, tiene que conocer la máquina. Mostrá las partes principales para que cuando hables de ellas más adelante, entiendan el vocabulario.
+
+Identificación de componentes: Bancada, husillo, carro portaherramientas, plato de sujeción, etc.
+
+El panel de control: Dónde está el botón de encendido, el regulador de velocidad y, el más importante de todos, el botón de parada de emergencia (E-STOP).
+
+2. Protocolo Obligatorio de Seguridad (EPI)
+En el taller no se negocia la seguridad. Dedicale una sección exclusiva a los Elementos de Protección Individual y las normas de conducta:
+
+Indumentaria: Gafas de seguridad (fundamentales contra virutas), calzado de protección, ropa ajustada (nada de mangas sueltas que puedan engancharse).
+
+Prohibiciones críticas: No usar guantes al operar partes giratorias (el guante puede ser atrapado por el husillo y arrastrar la mano), pelo largo completamente atado, cero anillos o cadenas.
+
+3. Preparación y Montaje (El "Set-Up")
+Esta es la fase de calibración. Un buen maquinado depende 100% de una buena preparación.
+
+Fijación de la pieza: Cómo asegurar la pieza en el plato o la morsa para que no salga volando.
+
+Selección y montaje de la herramienta: Elegir el inserto o cuchilla adecuada y alinearla correctamente (por ejemplo, a la altura del centro en un torno).
+
+Cálculo de parámetros (RPM y Avance): Explicá de forma sencilla cómo elegir la velocidad según el material (no es lo mismo mecanizar aluminio que acero inoxidable).
+
+4. Operación Paso a Paso (La Práctica)
+Acá va el núcleo del tutorial. Dividilo en operaciones básicas y mostralas en orden de dificultad.
+
+Operación inicial: Por ejemplo, en un torno, empezá por el refrentado (limpiar la cara) y seguí con el cilindrado (reducir el diámetro).
+
+Toma de pasadas: Explicá la diferencia entre pasadas de desbaste (sacar mucho material rápido) y pasadas de acabado (poca profundidad para dejar la superficie lisa).
+
+Uso de refrigerante: Cuándo y por qué usar fluido de corte para evitar que se queme la herramienta.
+
+5. Medición y Control de Calidad
+Enseñale a tu audiencia a verificar si lo hicieron bien.
+
+Cómo parar la máquina por completo antes de medir.
+
+Uso correcto del calibre (pie de rey) o micrómetro para verificar las tolerancias.
+
+6. Limpieza y Mantenimiento del Puesto
+Un buen maquinista se conoce por cómo deja su lugar de trabajo.
+
+Retirada de virutas (siempre con cepillo o gancho, nunca con las manos ni con aire comprimido directos, ya que la viruta vuela a los ojos).
+
+Lubricación básica de las guías al terminar para evitar el óxido.
+
+¿Por dónde querés empezar?
+Como venías programando en Unity, tenés la ventaja de que ya sabés estructurar procesos lógicos paso a paso.
+
+¿Tenés en mente una máquina específica para el primer tutorial (como un torno paralelo o un taladro) o vas a hacer una introducción general para principiantes?
