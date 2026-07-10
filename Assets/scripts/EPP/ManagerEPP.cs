@@ -9,27 +9,21 @@ public class ManagerEPP : NetworkBehaviour
     public bool requiereGafas = true;
     public bool requiereBotas = true;
     public bool requiereCasco = false; // El torno bajo techo quizás no lo requiera
-<<<<<<< HEAD
     public bool requiereFajaLumbar = false; 
     public bool requiereProtectorAuditivo = true; 
     public bool requiereChaleco = false; // El torno bajo techo quizás no lo requiera
     public bool requiereGuantes = true; 
 
 
-=======
->>>>>>> origin/EPP
 
     // Variables de red sincronizadas automáticamente de Host a Clientes
     private NetworkVariable<bool> tieneGafas = new NetworkVariable<bool>(false);
     private NetworkVariable<bool> tieneBotas = new NetworkVariable<bool>(false);
     private NetworkVariable<bool> tieneCasco = new NetworkVariable<bool>(false);
-<<<<<<< HEAD
     private NetworkVariable<bool> tieneFajaLumbar = new NetworkVariable<bool>(false);
     private NetworkVariable<bool> tieneProtectorAuditivo = new NetworkVariable<bool>(false);
     private NetworkVariable<bool> tieneChaleco = new NetworkVariable<bool>(false);
     private NetworkVariable<bool> tieneGuantes = new NetworkVariable<bool>(false);
-=======
->>>>>>> origin/EPP
 
     // Esto se ejecutará en OnGUI para mostrar el estado a todos
     private void OnGUI()
@@ -41,7 +35,6 @@ public class ManagerEPP : NetworkBehaviour
         GUILayout.Space(20);
 
         // 1. Mostrar los elementos y su estado actual en red
-<<<<<<< HEAD
         MostrarElementoUI("Gafas de Seguridad", tieneGafas.Value, requiereGafas, 1);
         MostrarElementoUI("Botas de seguridad", tieneBotas.Value, requiereBotas, 2);
         MostrarElementoUI("Casco de Protección", tieneCasco.Value, requiereCasco, 3);
@@ -49,11 +42,6 @@ public class ManagerEPP : NetworkBehaviour
         MostrarElementoUI("Protector auditivo", tieneProtectorAuditivo.Value, requiereProtectorAuditivo, 5);
         MostrarElementoUI("Chaleco Refractario", tieneChaleco.Value, requiereChaleco, 6);
         MostrarElementoUI("Guantes de seguridad", tieneGuantes.Value, requiereGuantes, 7);
-=======
-        MostrarElementoUI("Gafas de Seguridad (Obligatorio)", tieneGafas.Value, requiereGafas, 1);
-        MostrarElementoUI("Botas de Grado Industrial (Obligatorio)", tieneBotas.Value, requiereBotas, 2);
-        MostrarElementoUI("Casco de Protección (Opcional)", tieneCasco.Value, requiereCasco, 3);
->>>>>>> origin/EPP
 
         GUILayout.Space(30);
 
@@ -120,13 +108,10 @@ public class ManagerEPP : NetworkBehaviour
         if (id == 1) tieneGafas.Value = !tieneGafas.Value;
         if (id == 2) tieneBotas.Value = !tieneBotas.Value;
         if (id == 3) tieneCasco.Value = !tieneCasco.Value;
-<<<<<<< HEAD
         if (id == 4) tieneFajaLumbar.Value = !tieneFajaLumbar.Value;
         if (id == 5) tieneProtectorAuditivo.Value = !tieneProtectorAuditivo.Value;
         if (id == 6) tieneChaleco.Value = !tieneChaleco.Value;
         if (id == 7) tieneGuantes.Value = !tieneGuantes.Value;
-=======
->>>>>>> origin/EPP
     }
 
     private bool ValidarProtocolo()
@@ -135,13 +120,10 @@ public class ManagerEPP : NetworkBehaviour
         if (requiereGafas && !tieneGafas.Value) return false;
         if (requiereBotas && !tieneBotas.Value) return false;
         if (requiereCasco && !tieneCasco.Value) return false;
-<<<<<<< HEAD
         if (requiereFajaLumbar && !tieneFajaLumbar.Value) return false;
         if (requiereProtectorAuditivo && !tieneProtectorAuditivo.Value) return false;
         if (requiereChaleco && !tieneChaleco.Value) return false;
         if (requiereGuantes && !tieneGuantes.Value) return false;
-=======
->>>>>>> origin/EPP
 
         return true;
     }
