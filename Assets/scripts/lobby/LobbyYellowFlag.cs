@@ -193,7 +193,7 @@ public class LobbyYellowFlag : MonoBehaviour
                 GUI.backgroundColor = Color.cyan;
                 if (GUILayout.Button("INICIAR SIMULACIÓN TÉCNICA"))
                 {
-                    NetworkManager.Singleton.SceneManager.LoadScene("TallerCNC", LoadSceneMode.Single);
+                    NetworkManager.Singleton.SceneManager.LoadScene("EPP", LoadSceneMode.Single);
                 }
                 GUI.backgroundColor = Color.white;
             }
