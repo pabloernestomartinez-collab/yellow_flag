@@ -1,30 +1,41 @@
 using UnityEngine;
-using TMPro; // ¡Obligatorio para poder controlar el texto!
+using TMPro;
 
 public class IntroContador : MonoBehaviour
 {
     [Header("Referencias de UI")]
+    // El Canvas de la presentación (este sí se apaga de forma normal)
     public GameObject presentationCanvas;
+
+    // Cambiamos el GameObject por una referencia directa al script de tu Lobby OnGUI
+    public LobbyYellowFlag lobbyScript;
+
+    // El componente de texto para los números
     public TextMeshProUGUI textoContador;
 
     [Header("Configuración")]
-    private float tiempoRestante = 5.0f;    // Tiempo en segundos para la cuenta regresiva
-
+    public float tiempoRestante = 3.0f;
 
     private bool cuentaActiva = true;
 
+    void Start()
+    {
+        // Al iniciar, desactivamos el script del Lobby.
+        // Esto evita por completo que la función OnGUI() se ejecute y dibuje los botones en pantalla.
+        if (lobbyScript != null)
+        {
+            lobbyScript.enabled = false;
+        }
+    }
+
     void Update()
     {
-        if (!cuentaActiva) return;        // Si la cuenta ya terminó, no hacemos nada más
+        if (!cuentaActiva) return;
 
-
-        if (tiempoRestante > 0)        // Si todavía queda tiempo...
-
+        if (tiempoRestante > 0)
         {
             tiempoRestante -= Time.deltaTime;
-
-            textoContador.text = Mathf.CeilToInt(tiempoRestante).ToString();            // Usamos Mathf.CeilToInt para redondear hacia arriba (así muestra 3, luego 2, luego 1).
-
+            textoContador.text = Mathf.CeilToInt(tiempoRestante).ToString();
         }
         else
         {
@@ -32,17 +43,25 @@ public class IntroContador : MonoBehaviour
             textoContador.text = "0";
             cuentaActiva = false;
 
-            // Llamamos a la función para apagar el Canvas
+            // Transición de pantallas
             TerminarPresentacion();
         }
     }
 
     void TerminarPresentacion()
     {
+        // 1. Apagamos la presentación (Canvas)
         if (presentationCanvas != null)
         {
             presentationCanvas.SetActive(false);
-            Debug.Log("¡Cuenta regresiva terminada! Canvas apagado.");
+        }
+
+        // 2. Encendemos el script del Lobby. 
+        // Al activarse el script, Unity llamará inmediatamente a OnGUI() y el menú aparecerá.
+        if (lobbyScript != null)
+        {
+            lobbyScript.enabled = true;
+            Debug.Log("Intro finalizada. Interfaz OnGUI de Yellow Flag activada.");
         }
     }
 }

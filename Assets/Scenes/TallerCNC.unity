@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 179809455}
   - component: {fileID: 179809454}
   - component: {fileID: 179809453}
+  - component: {fileID: 179809457}
   - component: {fileID: 179809456}
   m_Layer: 3
   m_Name: emergencia
@@ -244,23 +245,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a897ebbbfc5c9005aa6a79fa301eeb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CNCButton
-  onClickAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1673454012}
-        m_TargetAssemblyTypeName: MachineStateManager, Assembly-CSharp
-        m_MethodName: StopAllCoroutines
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  normalMaterial: {fileID: 2100000, guid: f05bab5d30ed3b3d0a0b864fc3685873, type: 2}
-  highlightMaterial: {fileID: 2100000, guid: 2485ec6d0d362ea3280ff53f16d54be2, type: 2}
+  ShowTopMostFoldoutHeaderGroup: 1
+  botonRenderer: {fileID: 179809454}
+  colorPresionado: {r: 0, g: 1, b: 0, a: 1}
+  botonAnimator: {fileID: 0}
+--- !u!114 &179809457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179809451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 2508640801
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  <InScenePlaced>k__BackingField: 0
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &203844586
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +589,7 @@ GameObject:
   - component: {fileID: 389645281}
   - component: {fileID: 389645280}
   - component: {fileID: 389645283}
+  - component: {fileID: 389645284}
   m_Layer: 3
   m_Name: F2
   m_TagString: Untagged
@@ -687,11 +702,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a897ebbbfc5c9005aa6a79fa301eeb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CNCButton
-  onClickAction:
-    m_PersistentCalls:
-      m_Calls: []
-  normalMaterial: {fileID: 2100000, guid: b9d1a031b647d21aeb8fe249242b4822, type: 2}
-  highlightMaterial: {fileID: 2100000, guid: f1092a5bf4890a38bbf283a1a7320253, type: 2}
+  ShowTopMostFoldoutHeaderGroup: 1
+  botonRenderer: {fileID: 389645281}
+  colorPresionado: {r: 0, g: 1, b: 0, a: 1}
+  botonAnimator: {fileID: 0}
+--- !u!114 &389645284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389645278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 2027474556
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  <InScenePlaced>k__BackingField: 0
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &514091521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,7 +1375,9 @@ GameObject:
   - component: {fileID: 935046014}
   - component: {fileID: 935046013}
   - component: {fileID: 935046012}
+  - component: {fileID: 935046017}
   - component: {fileID: 935046015}
+  - component: {fileID: 935046016}
   m_Layer: 3
   m_Name: stop
   m_TagString: Untagged
@@ -1448,23 +1490,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a897ebbbfc5c9005aa6a79fa301eeb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CNCButton
-  onClickAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1673454012}
-        m_TargetAssemblyTypeName: MachineStateManager, Assembly-CSharp
-        m_MethodName: StopAllCoroutines
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  normalMaterial: {fileID: 2100000, guid: 171c1c333703ff240935643ce5f895f2, type: 2}
-  highlightMaterial: {fileID: 2100000, guid: 79e96db11a01beca198a210c3fd711a1, type: 2}
+  ShowTopMostFoldoutHeaderGroup: 1
+  botonRenderer: {fileID: 935046013}
+  colorPresionado: {r: 0, g: 1, b: 0, a: 1}
+  botonAnimator: {fileID: 0}
+--- !u!114 &935046016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935046010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.Components.NetworkTransform
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AutoOwnerAuthorityTickOffset: 1
+  PositionInterpolationType: 0
+  RotationInterpolationType: 0
+  ScaleInterpolationType: 0
+  PositionLerpSmoothing: 1
+  PositionMaxInterpolationTime: 0.1
+  RotationLerpSmoothing: 1
+  RotationMaxInterpolationTime: 0.1
+  ScaleLerpSmoothing: 1
+  ScaleMaxInterpolationTime: 0.1
+  AuthorityMode: 0
+  TickSyncChildren: 0
+  UseUnreliableDeltas: 0
+  SyncPositionX: 0
+  SyncPositionY: 0
+  SyncPositionZ: 1
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
+  SyncRotAngleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
+  Interpolate: 1
+  SlerpPosition: 0
+--- !u!114 &935046017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935046010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 4000046606
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  <InScenePlaced>k__BackingField: 0
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,6 +2036,7 @@ GameObject:
   - component: {fileID: 1372320323}
   - component: {fileID: 1372320322}
   - component: {fileID: 1372320321}
+  - component: {fileID: 1372320325}
   - component: {fileID: 1372320324}
   m_Layer: 3
   m_Name: marcha
@@ -2048,23 +2150,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a897ebbbfc5c9005aa6a79fa301eeb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CNCButton
-  onClickAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1673454012}
-        m_TargetAssemblyTypeName: MachineStateManager, Assembly-CSharp
-        m_MethodName: OnCycleStartPresionado
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  normalMaterial: {fileID: 2100000, guid: ecb496052c16195d6a2afa0a3eb5d09a, type: 2}
-  highlightMaterial: {fileID: 2100000, guid: 2b35bbad18b502c84bc0b23884431e6c, type: 2}
+  ShowTopMostFoldoutHeaderGroup: 1
+  botonRenderer: {fileID: 1372320322}
+  colorPresionado: {r: 0, g: 1, b: 0, a: 1}
+  botonAnimator: {fileID: 0}
+--- !u!114 &1372320325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372320319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 3051994967
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  <InScenePlaced>k__BackingField: 0
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &1376436482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,6 +2483,7 @@ GameObject:
   - component: {fileID: 1640381322}
   - component: {fileID: 1640381321}
   - component: {fileID: 1640381324}
+  - component: {fileID: 1640381325}
   m_Layer: 3
   m_Name: F1
   m_TagString: Untagged
@@ -2480,11 +2596,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a897ebbbfc5c9005aa6a79fa301eeb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CNCButton
-  onClickAction:
-    m_PersistentCalls:
-      m_Calls: []
-  normalMaterial: {fileID: 2100000, guid: b9d1a031b647d21aeb8fe249242b4822, type: 2}
-  highlightMaterial: {fileID: 2100000, guid: f1092a5bf4890a38bbf283a1a7320253, type: 2}
+  ShowTopMostFoldoutHeaderGroup: 1
+  botonRenderer: {fileID: 1640381322}
+  colorPresionado: {r: 0, g: 1, b: 0, a: 1}
+  botonAnimator: {fileID: 0}
+--- !u!114 &1640381325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640381319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 84445562
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  <InScenePlaced>k__BackingField: 0
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &1673454011
 GameObject:
   m_ObjectHideFlags: 0
