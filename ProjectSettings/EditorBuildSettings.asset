@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/lobby.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/EPP.unity
+    guid: b826c238ab2b4bd538d09b2030f41d57
+  - enabled: 1
     path: Assets/Scenes/TallerCNC.unity
     guid: 89971596817ad3642a9c5f706b3a0ab4
   m_configObjects:
