@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Unity.Netcode; // ¡Añadimos esta librería para saber quién es quién en la red!
+using Unity.Netcode;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -8,30 +8,47 @@ public class PlayerInteraction : MonoBehaviour
     public float interactionRange = 2.0f;
     public LayerMask interactableLayer;
 
+    [Header("Interfaz de Usuario (UI)")]
+    // Arrastra aquí el GameObject de la imagen de tu mira en el Canvas
+    public GameObject miraInteractivaUI;
+
     private IInteractable currentInteractable;
+
+    void Start()
+    {
+        // Nos aseguramos de que la mira empiece apagada al iniciar el taller
+        if (miraInteractivaUI != null)
+        {
+            miraInteractivaUI.SetActive(false);
+        }
+    }
 
     void Update()
     {
         // ------------------------------------------------------------------------
         // REGLA DE AUTORIDAD DE YELLOW FLAG
         // ------------------------------------------------------------------------
-        // Si el NetworkManager está corriendo y el jugador local NO es el Servidor/Host...
         if (NetworkManager.Singleton != null && !NetworkManager.Singleton.IsServer)
         {
-            // El cliente es un mero observador. Si estaba mirando un botón, lo deseleccionamos.
             if (currentInteractable != null)
             {
                 currentInteractable.OnHoverExit();
                 currentInteractable = null;
             }
 
-            return; // Cortamos el Update aquí. El código de abajo nunca se ejecutará para el cliente.
+            // Si el cliente por alguna razón tuviera la mira prendida, la apagamos
+            if (miraInteractivaUI != null && miraInteractivaUI.activeSelf)
+            {
+                miraInteractivaUI.SetActive(false);
+            }
+
+            return;
         }
         // ------------------------------------------------------------------------
 
         if (Mouse.current == null) return;
 
-        // 1. Trazar el Rayo (Solo se ejecutará en la pantalla del Host)
+        // 1. Trazar el Rayo (Solo para el Host)
         Vector2 mousePos = Mouse.current.position.ReadValue();
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
         RaycastHit hit;
@@ -50,9 +67,15 @@ public class PlayerInteraction : MonoBehaviour
 
                     currentInteractable = interactableObject;
                     currentInteractable.OnHoverEnter();
+
+                    // ¡AQUÍ PRENDEMOS TU MIRA! El mouse entró a un botón válido
+                    if (miraInteractivaUI != null)
+                    {
+                        miraInteractivaUI.SetActive(true);
+                    }
                 }
 
-                // 3. Detectar el Clic Izquierdo (Solo permitido al Host)
+                // 3. Detectar el Clic Izquierdo
                 if (Mouse.current.leftButton.wasPressedThisFrame)
                 {
                     currentInteractable.Interact();
@@ -61,11 +84,24 @@ public class PlayerInteraction : MonoBehaviour
         }
         else
         {
+            // Si el rayo ya no toca nada, limpiamos el estado y apagamos la mira
             if (currentInteractable != null)
             {
                 currentInteractable.OnHoverExit();
                 currentInteractable = null;
+
+                // ¡AQUÍ APAGAMOS LA MIRA! El mouse salió del botón
+                if (miraInteractivaUI != null)
+                {
+                    miraInteractivaUI.SetActive(false);
+                }
             }
+        }
+
+        // OPCIONAL: Si quieres que la mira siga exactamente la posición del mouse en pantalla:
+        if (miraInteractivaUI != null && miraInteractivaUI.activeSelf)
+        {
+            miraInteractivaUI.transform.position = mousePos;
         }
     }
 }
