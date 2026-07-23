@@ -34,7 +34,7 @@ public class ControlCamaraCNC : MonoBehaviour
 
         // Ajustamos el colisionador de la cámara
         SphereCollider col = GetComponent<SphereCollider>();
-        col.radius = 0.2f;                      // Un tamaño pequeño para que pueda acercarse al panel CNC
+        col.radius = 0.5f;                      // Un tamaño pequeño para que pueda acercarse al panel CNC
         col.isTrigger = false;
     }
 
