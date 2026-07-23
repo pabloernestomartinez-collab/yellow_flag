@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -40,17 +41,25 @@ public class ControlCamaraCNC : MonoBehaviour
 
     void Update()
     {
+
+
+        if (NetworkManager.Singleton != null && !NetworkManager.Singleton.IsServer) return;
+
         ProcesarRotacion();
     }
 
     void FixedUpdate()
     {
         // El movimiento físico SIEMPRE debe ejecutarse en FixedUpdate para evitar que traspase objetos a altos FPS
+
+        if (NetworkManager.Singleton != null && !NetworkManager.Singleton.IsServer) return;
         ProcesarMovimientoFisico();
     }
 
     private void ProcesarRotacion()
     {
+        
+        
         if (Mouse.current == null) return;
 
         if (Mouse.current.rightButton.wasPressedThisFrame)
