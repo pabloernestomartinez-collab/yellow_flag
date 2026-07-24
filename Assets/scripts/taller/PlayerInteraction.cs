@@ -12,6 +12,9 @@ public class PlayerInteraction : MonoBehaviour
     // Arrastra aquí el GameObject de la imagen de tu mira en el Canvas
     public GameObject miraInteractivaUI;
 
+    // Arrastra aquí el Canvas 'pantalla_CNC' para bloquear el raycast cuando esté abierto
+    public GameObject pantalla_CNC;
+
     private IInteractable currentInteractable;
 
     void Start()
@@ -30,19 +33,19 @@ public class PlayerInteraction : MonoBehaviour
         // ------------------------------------------------------------------------
         if (NetworkManager.Singleton != null && !NetworkManager.Singleton.IsServer)
         {
-            if (currentInteractable != null)
-            {
-                currentInteractable.OnHoverExit();
-                currentInteractable = null;
-            }
-
-            // Si el cliente por alguna razón tuviera la mira prendida, la apagamos
-            if (miraInteractivaUI != null && miraInteractivaUI.activeSelf)
-            {
-                miraInteractivaUI.SetActive(false);
-            }
-
+            LimpiarSeleccionYMira();
             return;
+        }
+        // ------------------------------------------------------------------------
+
+        // ------------------------------------------------------------------------
+        // BLOQUEO POR PANTALLA CNC ABIERTA (OPCIÓN 1)
+        // ------------------------------------------------------------------------
+        // Si la pantalla CNC está abierta en el Canvas, cancelamos toda interacción 3D.
+        if (pantalla_CNC != null && pantalla_CNC.activeSelf)
+        {
+            LimpiarSeleccionYMira();
+            return; // Detenemos la ejecución aquí; el Raycast no se disparará
         }
         // ------------------------------------------------------------------------
 
@@ -68,7 +71,7 @@ public class PlayerInteraction : MonoBehaviour
                     currentInteractable = interactableObject;
                     currentInteractable.OnHoverEnter();
 
-                    // ¡AQUÍ PRENDEMOS TU MIRA! El mouse entró a un botón válido
+                    // Encendemos la mira al apuntar a un objeto interactivo
                     if (miraInteractivaUI != null)
                     {
                         miraInteractivaUI.SetActive(true);
@@ -84,24 +87,29 @@ public class PlayerInteraction : MonoBehaviour
         }
         else
         {
-            // Si el rayo ya no toca nada, limpiamos el estado y apagamos la mira
-            if (currentInteractable != null)
-            {
-                currentInteractable.OnHoverExit();
-                currentInteractable = null;
-
-                // ¡AQUÍ APAGAMOS LA MIRA! El mouse salió del botón
-                if (miraInteractivaUI != null)
-                {
-                    miraInteractivaUI.SetActive(false);
-                }
-            }
+            // Si el rayo no toca nada interactivo, limpiamos el estado
+            LimpiarSeleccionYMira();
         }
 
-        // OPCIONAL: Si quieres que la mira siga exactamente la posición del mouse en pantalla:
+        // Posicionamiento dinámico de la mira sobre el cursor
         if (miraInteractivaUI != null && miraInteractivaUI.activeSelf)
         {
             miraInteractivaUI.transform.position = mousePos;
+        }
+    }
+
+    // Método auxiliar para evitar repetición de código al apagar la mira y limpiar selecciones
+    private void LimpiarSeleccionYMira()
+    {
+        if (currentInteractable != null)
+        {
+            currentInteractable.OnHoverExit();
+            currentInteractable = null;
+        }
+
+        if (miraInteractivaUI != null && miraInteractivaUI.activeSelf)
+        {
+            miraInteractivaUI.SetActive(false);
         }
     }
 }
